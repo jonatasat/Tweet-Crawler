@@ -1,0 +1,34 @@
+
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+	http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="persist">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>br.unisul.javabean.Usuario</class>
+		<class>br.unisul.javabean.Tweet</class>
+		<class>br.unisul.javabean.Stream</class>
+		<class>br.unisul.javabean.Entidade</class>
+		<properties>
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/tcc" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value=";jatroot" />
+			<!-- JDBC connection pool (use the built-in) -->
+			<property name="hibernate.connection.pool_size" value="1" />
+			<!-- SQL dialect -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<!-- Enable Hibernate's automatic session context management -->
+			<property name="hibernate.current_session_context_class"
+				value="thread" />
+			<!-- Disable the second-level cache -->
+			<property name="hibernate.cache.provider_class"
+				value="org.hibernate.cache.internal.NoCacheProvider" />
+			<!-- Echo all executed SQL to stdout -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Drop and re-create the database schema on startup -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
